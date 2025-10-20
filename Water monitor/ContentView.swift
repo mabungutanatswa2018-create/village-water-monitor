@@ -21,7 +21,7 @@ struct ContentView: View {
                 
                 Text("Monitor  usage, reduce waste and enjoy a more sustainable lifestyle!")
                 Spacer()
-                NavigationLink("Get started"){ HomePage()
+                NavigationLink("Get started"){HomePage()
                     
                 }
                 .padding()
