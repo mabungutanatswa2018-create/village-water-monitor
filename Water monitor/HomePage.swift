@@ -7,8 +7,31 @@
 
 import SwiftUI
 
+struct Household: Identifiable {
+    let id = UUID()
+    var name: String
+    var litersUsed: Double
+    var refillCount: Int
+    var averageUsage: Double
+}
+
+class HouseholdViewModel: ObservableObject {
+    @Published var litersUsed: Double = 0
+    @Published var refillCount: Int = 0
+    @Published var refills: [Refill] = []
+}
+
+
 struct HomePage: View {
-    @State private var names = ["Rhodes", "Miller", "Willing", "Harrison","Johnson", "Smith", "Moyo", "Ncube", "Hill", "Wilson", "Shumba", "Ndlovu", "Warner", "Ewart", "Brown", "White", "Jones", "Washington", "Phiri", "Patil"]
+//    @Binding var selectedTab: Int
+    @State private var names = [
+        Household(name: "Rhodes", litersUsed: 120, refillCount: 2, averageUsage: 150),
+        Household(name: "Miller", litersUsed: 180, refillCount: 3, averageUsage: 150),
+        Household(name: "Waner", litersUsed: 90, refillCount: 1, averageUsage: 150),
+        Household(name: "Ewart", litersUsed: 40, refillCount: 4, averageUsage: 150),
+        Household(name: "Ncube", litersUsed: 200, refillCount: 5, averageUsage: 150)
+    ]
+
     @State var newName: String = ""
     @State private var showTextField = false
     var body: some View {
@@ -24,17 +47,18 @@ struct HomePage: View {
                     
                 }
                 .padding(.trailing, 20)
-                
-                List{ ForEach(names, id: \.self){name in
-                   
-                   NavigationLink(destination: Details()) {
-                    Text(name)
+                List {
+                    ForEach($names) { $name in
+                        NavigationLink(destination: HouseholdDetailView(
+                            householdName: name.name,
+                            litersUsed: $name.litersUsed,
+                            refillCount: $name.refillCount,
+                            averageUsage: $name.averageUsage
+                        )) {
+                            Text(name.name)
+                        }
                     }
-                        
-                }
-                
-                .onDelete(perform: deleteName)
-                
+                    .onDelete(perform: deleteHousehold)
                 }
                 if showTextField {
                     HStack {
@@ -44,10 +68,17 @@ struct HomePage: View {
                         
                         Button(action:{
                             if !newName.isEmpty {
-                                names.append(newName)
+                                let newHousehold = Household(
+                                    name: newName,
+                                    litersUsed: 0,
+                                    refillCount: 0,
+                                    averageUsage: 150
+                                )
+                                names.append(newHousehold)
                                 newName = ""
                                 showTextField.toggle()
                             }
+
                             
                         }){
                             Image(systemName: "checkmark.circle.fill")
@@ -78,11 +109,12 @@ struct HomePage: View {
         }
     }
     //deleting a name
-        func deleteName(at offsets: IndexSet){
-            names.remove(atOffsets: offsets)
-        }
-    
+    func deleteHousehold(at offsets: IndexSet) {
+        names.remove(atOffsets: offsets)
+    }
 }
+    
+
 #Preview {
     HomePage()
 }

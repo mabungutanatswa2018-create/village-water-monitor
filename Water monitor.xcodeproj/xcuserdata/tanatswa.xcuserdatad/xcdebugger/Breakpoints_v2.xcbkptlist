@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "9F806B5F-CA48-4A57-8DA0-9E3CB0368704"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D1C47068-912D-44DB-AFB1-58C39C6AA07D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../var/folders/jt/22767cjd5016zvltqy0h0h980000gq/T/swift-generated-sources/@__swiftmacro_13Water_monitor0018Historyswift_jHJJcfMX75_0_33_C5762CBCA6D0EAA5EE2789238B5AF93FLl7PreviewfMf_.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1"
+            endingLineNumber = "1"
+            landmarkName = "$s13Water_monitor0018Historyswift_jHJJcfMX75_0_33_C5762CBCA6D0EAA5EE2789238B5AF93FLl7PreviewfMf_15PreviewRegistryfMu_"
+            landmarkType = "37">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
