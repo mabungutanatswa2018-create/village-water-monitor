@@ -18,7 +18,7 @@ class Auth: ObservableObject {
         do{
             let current = try await supabase.auth.session
             self.session = current
-            self.isAuthenticated = current != nil
+            self.isAuthenticated = self.session != nil
         }catch{
             print("No active session \(error.localizedDescription)")
         }
