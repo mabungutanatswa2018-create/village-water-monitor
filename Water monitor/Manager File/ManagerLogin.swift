@@ -129,7 +129,7 @@ struct ManagerLoginView: View {
                 }
                 .padding()
          }
-           //sheet that shows the sign up view
+           //signup sheet
             .sheet(isPresented: $showSignUp) {
                 ManagerSignUpView() { newEmail in
                     email = newEmail
