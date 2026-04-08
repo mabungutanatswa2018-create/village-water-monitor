@@ -23,7 +23,7 @@ struct HomePage: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                // Background to match other screens
+                // Background
                 LinearGradient(
                     colors: [
                         Color.blue.opacity(0.9),
