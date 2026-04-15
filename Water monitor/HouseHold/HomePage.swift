@@ -82,7 +82,7 @@ struct HomePage: View {
                                                 Spacer()
                                             
                                             Image(systemName: "chevron.right")
-                                                .foregroundColor(.secondary)
+                                                .foregroundColor(.black)
                                                 .font(.caption)
                                     
                                     }
@@ -157,7 +157,9 @@ struct HomePage: View {
                     }
                     .padding(.top, 8)
                     .padding(.bottom)
-
+                    Text("Add household") // or "Add household" / "Add reading"
+                                .foregroundColor(.white)
+                                .font(.headline)
                 }
             }
           // navigation and sheet logic
