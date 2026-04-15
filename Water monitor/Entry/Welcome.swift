@@ -27,9 +27,7 @@ struct WelcomeView: View {
                             endPoint: .bottom
                         )
                         .ignoresSafeArea()
-                        
-                        
-                        
+                      
                         VStack(spacing: 28) {
                             Spacer().frame(height: 30)
                             
@@ -89,17 +87,18 @@ struct WelcomeView: View {
                                         .font(.headline)
                                     Text("Get Started")
                                         .font(.headline)
+                                        .fontWeight(.semibold)
                                 }
                                 .padding(.horizontal, 46)
                                 .padding(.vertical, 14)
                                 .background(
                                     LinearGradient(
-                                        colors: [Color.white, Color.cyan.opacity(0.9)],
+                                        colors: [Color.blue, Color.cyan],
                                         startPoint: .leading,
                                         endPoint: .trailing
                                     )
                                 )
-                                .foregroundColor(.blue)
+                                .foregroundColor(.white)
                                 .clipShape(Capsule())
                                 .shadow(color: Color.black.opacity(0.25), radius: 10, x: 0, y: 4)
                             }
