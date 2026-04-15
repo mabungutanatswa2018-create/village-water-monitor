@@ -65,14 +65,15 @@ struct RoleSelection: View {
                                 VStack(alignment: .leading, spacing: 4) {
                                     Text("Household Login")
                                         .font(.headline)
+                                        .fontWeight(.semibold)
                                     Text("View and track your own water usage.")
                                         .font(.caption)
-                                        .foregroundColor(.secondary)
+                                        .foregroundColor(.black)
                                 }
                                 Spacer()
                                 Image(systemName: "chevron.right")
                                     .font(.caption)
-                                    .foregroundColor(.secondary)
+                                    .foregroundColor(.black)
                             }
                             .padding()
                             .frame(maxWidth: .infinity)
@@ -98,17 +99,22 @@ struct RoleSelection: View {
                                         .font(.headline)
                                     Text("Manage households and monitor usage across the network.")
                                         .font(.caption)
-                                        .foregroundColor(.secondary)
+                                        .foregroundColor(.black)
                                 }
                                 Spacer()
                                 Image(systemName: "chevron.right")
                                     .font(.caption)
-                                    .foregroundColor(.secondary)
+                                    .foregroundColor(.black)
                             }
                             .padding()
                             .frame(maxWidth: .infinity)
-                            .background(Color(.systemBackground))
-                            .foregroundColor(.primary)
+                            .background(
+                                LinearGradient(
+                                    colors: [Color.blue, Color.cyan],
+                                    startPoint: .leading,
+                                    endPoint: .trailing
+                                ))
+                            .foregroundColor(.white)
                             .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
                             .shadow(color: Color.black.opacity(0.10), radius: 6, x: 0, y: 3)
                         }
