@@ -86,7 +86,7 @@ struct DetailView: View {
                         colorForUsage(
                             liters: household.litersUsed,
                             average: averageUsage
-                        ).opacity(0.20)
+                        ).opacity(0.25)
                     )
                     .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
                     
@@ -149,12 +149,12 @@ struct DetailView: View {
                         Text("View / Add Refills")
                             .fontWeight(.semibold)
                     }
-                    .foregroundColor(.blue)
+                    .foregroundColor(.white)
                     .padding()
-                    .frame(maxWidth: .infinity)
+                    //.frame(maxWidth: .infinity)
                     .background(
                         LinearGradient(
-                            colors: [Color.white, Color.cyan.opacity(0.9)],
+                            colors: [Color.blue, Color.cyan.opacity(0.9)],
                             startPoint: .leading,
                             endPoint: .trailing
                         )
